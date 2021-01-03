@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>{% block title %} Hello from Template {% endblock title %}</title>
+
+</head>
+<body>
+<canvas id='mycanvas'></canvas>
+
+<h3>GOOD!</h3>
+
+<script src={% static "scripts/chart.js" %}></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,11 +1,20 @@
+
 <!DOCTYPE html>
+
+{% load static %}
+
 <html>
 <head>
     <meta charset="utf-8" />
+    <script src="http://d3js.org/d3.v3.min.js"> </script>
     <title>Hello Django</title>
 </head>
 <body>
-    <h1>{{ header }}</h1>
-    <h3>{{ message }}</h3>
+<h3>GOOD!</h3>
+
+{% extends 'jsfile.html' %}
+
 </body>
+<script src={% static 'scripts/graphics.js' %}>  </script>
+
 </html>

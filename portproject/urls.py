@@ -19,4 +19,6 @@ from firstapp import views
 
 urlpatterns = [
     path('', views.index),
+    path('temp', views.temp),
+    path('chart', views.chart),
 ]
