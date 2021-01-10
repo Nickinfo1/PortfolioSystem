@@ -40,5 +40,16 @@ def temp(request):
     return render(request, "temp.html", context={"mas": arr_output})
 
 def chart(request):
+    # Init path csv file 
+    csv_file = '/home/nick/Загрузки/GAZP_201201_210106.txt'
+    # Read and parsing csv file
+    quotes = pd.read_csv(csv_file, encoding='utf-8',
+                         sep=',')
+    bar_count = 10
+    copen = quotes['<OPEN>'][:bar_count].to_list()
+    chigh = quotes['<HIGH>'][:bar_count].to_list()
+    clow = quotes['<LOW>'][:bar_count].to_list()
+    cclose = quotes['<CLOSE>'][:bar_count].to_list()
 
-    return render(request, "chart.html")
+   # Берем цены закрытия и передаем их по 1000 элементов
+    return render(request, "chart.html", context={"open": copen,"high": chigh,"low": clow,"close": cclose})
